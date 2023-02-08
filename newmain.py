@@ -152,10 +152,10 @@ def main(args):
     # TODO: these could easily be refactored into one function, but we kept it this way for modularity
     
     environment=args.environment
-    cfg = {"server": "jmandivarapu1@retina.cs.gsu.edu","port": 8097}
-    vis = visdom.Visdom('http://' + cfg["server"], port = cfg["port"])
+    cfg = {"server": "jmandivarapu1@retina.cs.gsu.edu","port": 6006}
+    vis = visdom.Visdom(port = cfg["port"])
     vis.delete_env(args.environment) #If you want to clear all the old plots for this python Experiments.Resets the Environment
-    vis = visdom.Visdom('http://' + cfg["server"], port = cfg["port"],env=environment)
+    vis = visdom.Visdom(port = cfg["port"],env=environment)
 
     # vis = visdom.Visdom()
     
