@@ -440,12 +440,11 @@ if __name__ == '__main__':
     args = arguments_yaml.get_args()
     with open(args.work_path) as f:
         config = yaml.load(f)
+    # convert to dict
+    args = EasyDict(config)
     args.joint = True
     args.out_path = './ActiveLearning'
     args.data_path = './cifar10/'
-    
-    # convert to dict
-    args = EasyDict(config)
     main(args)
 
 
